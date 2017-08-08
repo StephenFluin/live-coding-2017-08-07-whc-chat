@@ -1,0 +1,14 @@
+<h1>Women Who Code Chat App</h1>
+<div class="messages">
+  <div *ngFor="let message of messages | async">
+    {{message.body}} - by {{message.author}}
+  </div>
+</div>
+<form ngNoForm (submit)="send(newMessage)">
+  <input [(ngModel)]="newMessage.body" placeholder="message">
+  <input [(ngModel)]="newMessage.author" placeholder="author">
+  <button type="submit">Send</button>
+</form>
+
+
+
